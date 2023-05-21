@@ -17,12 +17,13 @@ model User {
   login     String
   avatarUrl String
 
-  Memories Memory[]
+  memories Memory[]
 }
 
 model Memory {
-  id        String   @id @default(uuid())
-  userId    String
+  id     String @id @default(uuid())
+  userId String
+
   coverUrl  String
   content   String
   isPublic  Boolean  @default(false)
