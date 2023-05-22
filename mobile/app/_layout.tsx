@@ -46,19 +46,19 @@ export default function Layout() {
       imageStyle={{ position: 'absolute', left: '-100%' }}
     >
       <StyledStripes className="absolute left-2" />
-      <StatusBar style="auto" />
+      <StatusBar style="light" translucent />
 
       <Stack
         screenOptions={{
           headerShown: false,
-          contentStyle: {
-            backgroundColor: 'transparent',
-          },
+          contentStyle: { backgroundColor: 'transparent' },
+          animation: 'fade',
         }}
-      />
-      <Stack.Screen name="index" redirect={isUserAuthenticated} />
-      <Stack.Screen name="new" />
-      <Stack.Screen name="memories" />
+      >
+        <Stack.Screen name="index" redirect={isUserAuthenticated} />
+        <Stack.Screen name="memories" />
+        <Stack.Screen name="new" />
+      </Stack>
     </ImageBackground>
   )
 }
